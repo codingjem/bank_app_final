@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    width: 500px;
+    height: 310px;
+    padding: 0 20px;
+    border: 0.2px solid white;
+    border-radius: 10px;
+}
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+.visa-logo {
+    display: flex;
+    align-self: flex-end;
+}
