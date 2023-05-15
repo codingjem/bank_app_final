@@ -43,6 +43,14 @@ function LogIn() {
     const [validAccount, setValidAccount] = useState(true);
     const [userAccount, setUserAccount] = useState({});
 
+    const newDepositBalance = (amount) => {
+        const addedBalance = userAccount.balance + amount;
+        setUserAccount({ ...userAccount, balance: addedBalance });
+        console.log(amount);
+        console.log(userAccount);
+        console.log(addedBalance);
+    };
+
     const findAccount = () => {
         const userAccountFound = accounts.find((account) => {
             return account.email === email && account.password === password;
@@ -75,7 +83,7 @@ function LogIn() {
     };
 
     return (
-        <>
+        <div className="log-in-section">
             <form onSubmit={handleSubmit}>
                 {!validAccount && (
                     <p>User Not Found, You need to create an Account!</p>
@@ -109,8 +117,9 @@ function LogIn() {
                 email={userAccount.email}
                 password={userAccount.password}
                 date={userAccount.date}
+                onDeposit={newDepositBalance}
             />
-        </>
+        </div>
     );
 }
 

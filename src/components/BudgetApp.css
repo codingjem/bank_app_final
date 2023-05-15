@@ -1,0 +1,13 @@
+.budget-app {
+    display: flex;
+}
+.expense-item {
+    width: 400px;
+    text-align: start;
+}
+.cost {
+    width: 100px;
+}
+.action {
+    width: 50px;
+}
