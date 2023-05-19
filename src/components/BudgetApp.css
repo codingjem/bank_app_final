@@ -1,13 +1,20 @@
-.budget-app {
+.expense-label {
     display: flex;
 }
 .expense-item {
-    width: 400px;
+    width: 200px;
     text-align: start;
 }
 .cost {
-    width: 100px;
+    width: 150px;
 }
 .action {
-    width: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+}
+
+.custom-new-budget-app {
+    display: flex;
+    flex-direction: column;
 }

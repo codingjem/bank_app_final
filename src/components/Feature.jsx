@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import "./Feature.css";
 
-function Deposit({ onDeposit }) {
+function Feature(props) {
+    const { feature, featureLabel } = props;
     const [depositAmount, setDepositAmount] = useState(0);
 
     const handleAmountChange = (e) => {
@@ -11,7 +13,7 @@ function Deposit({ onDeposit }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onDeposit(depositAmount);
+        feature(depositAmount);
 
         // Needed so it will not refresh the page
     };
@@ -19,22 +21,21 @@ function Deposit({ onDeposit }) {
         <div className="">
             <div className="">
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="deposit-money">
-                        <h3>Deposit Money</h3>
+                    <label htmlFor={featureLabel}>
+                        <h3>{featureLabel}</h3>
                     </label>
-                    <input
-                        type="number"
-                        id="deposit-money"
-                        value={depositAmount}
-                        onChange={handleAmountChange}
-                    />
-                    {depositAmount}
-                    <a>
-                        <button type="submit">Deposit</button>
-                    </a>
+                    <div className="feature-inputs">
+                        <input
+                            type="number"
+                            id={featureLabel}
+                            value={depositAmount}
+                            onChange={handleAmountChange}
+                        />
+                        <button type="submit">{featureLabel}</button>
+                    </div>
                 </form>
             </div>
         </div>
     );
 }
-export default Deposit;
+export default Feature;
